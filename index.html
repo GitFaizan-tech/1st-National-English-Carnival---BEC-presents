@@ -1,0 +1,869 @@
+<!DOCTYPE html>  <html lang="en">    <head>      <meta charset="UTF-8">      
+<meta name="viewport" content="width=device-width, initial-scale=1.0">      
+<title>1st Brightian National English Carnival</title>  <style>      
+:root {      
+    --green: #073d2b;      
+    --dark: #04291e;      
+    --light-green: #e7f3eb;      
+    --white: #ffffff;      
+    --gold: #d9c58b;      
+    --text: #24352c;      
+}    {  
+margin: 0;  
+padding: 0;  
+box-sizing: border-box;  
+scroll-behavior: smooth;  
+}  body {
+font-family: Arial, Helvetica, sans-serif;
+background: #f7faf7;
+color: var(--text);
+line-height: 1.7;
+}
+
+header {
+background: var(--green);
+color: white;
+padding: 14px 6%;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 3px 15px #0002;
+}
+
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 20px;
+}
+
+.brand {
+font-weight: bold;
+font-size: 19px;
+letter-spacing: 1px;
+}
+
+.nav-links {
+display: flex;
+gap: 22px;
+list-style: none;
+}
+
+.nav-links a {
+color: white;
+text-decoration: none;
+font-size: 14px;
+}
+
+.nav-links a:hover {
+color: var(--gold);
+}
+
+.menu-btn {
+display: none;
+background: transparent;
+border: 1px solid white;
+color: white;
+padding: 7px 12px;
+border-radius: 5px;
+font-size: 20px;
+}
+
+.hero {
+background: linear-gradient(135deg, #073d2b, #0b5940);
+color: white;
+text-align: center;
+padding: 65px 6% 80px;
+}
+
+.title-image {
+display: block;
+width: 100%;
+max-width: 1000px;
+height: auto;
+margin: 0 auto 30px;
+border-radius: 10px;
+}
+
+/* The title image will be embedded here later. */
+
+.eyebrow {
+color: var(--gold);
+text-transform: uppercase;
+letter-spacing: 4px;
+font-size: 12px;
+font-weight: bold;
+}
+
+.hero h1 {
+font-size: clamp(34px, 6vw, 65px);
+line-height: 1.15;
+margin: 18px 0;
+}
+
+.hero h1 span {
+color: var(--gold);
+}
+
+.hero p {
+max-width: 650px;
+margin: 0 auto 28px;
+color: #e0eee6;
+}
+
+.btn {
+display: inline-block;
+background: white;
+color: var(--green);
+padding: 13px 25px;
+border-radius: 6px;
+text-decoration: none;
+font-weight: bold;
+transition: 0.3s;
+border: none;
+cursor: pointer;
+}
+
+.btn:hover {
+background: var(--gold);
+transform: translateY(-3px);
+}
+
+.btn-outline {
+border: 1px solid white;
+background: transparent;
+color: white;
+margin-left: 10px;
+}
+
+section {
+padding: 75px 7%;
+scroll-margin-top: 75px;
+}
+
+.section-heading {
+text-align: center;
+margin-bottom: 40px;
+}
+
+.section-heading h2 {
+color: var(--green);
+font-size: clamp(27px, 4vw, 38px);
+margin-bottom: 10px;
+}
+
+.section-heading p {
+max-width: 650px;
+margin: auto;
+color: #66756c;
+}
+
+.about-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 30px;
+max-width: 1000px;
+margin: auto;
+}
+
+.about-card {
+background: white;
+padding: 30px;
+border-radius: 12px;
+border: 1px solid #e1ebe4;
+box-shadow: 0 5px 20px #073d2b08;
+}
+
+.about-card h3 {
+color: var(--green);
+margin-bottom: 12px;
+}
+
+.events-section {
+background: var(--light-green);
+}
+
+.event-category {
+max-width: 1100px;
+margin: 0 auto 45px;
+}
+
+.category-title {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 20px;
+color: var(--green);
+font-size: 25px;
+}
+
+.event-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 18px;
+}
+
+.event-card {
+background: white;
+border-radius: 10px;
+padding: 22px;
+border: 1px solid #dce9df;
+transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.event-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 25px #073d2b12;
+}
+
+.event-card h3 {
+color: var(--green);
+font-size: 17px;
+line-height: 1.5;
+margin-bottom: 8px;
+}
+
+.event-card p {
+font-size: 13px;
+color: #728077;
+}
+
+.signature .event-card {
+border-top: 4px solid var(--gold);
+}
+
+.register-section {
+background: white;
+}
+
+.form-container {
+max-width: 800px;
+margin: auto;
+padding: 35px;
+border: 1px solid #dce9df;
+border-radius: 14px;
+box-shadow: 0 10px 35px #073d2b0b;
+}
+
+.form-intro {
+text-align: center;
+margin-bottom: 30px;
+}
+
+.form-intro h2 {
+color: var(--green);
+font-size: 32px;
+}
+
+.form-group {
+margin-bottom: 23px;
+}
+
+.form-group > label,
+.field-label {
+display: block;
+font-weight: bold;
+margin-bottom: 9px;
+color: var(--green);
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+select {
+width: 100%;
+padding: 13px;
+border: 1px solid #ccd9cf;
+border-radius: 6px;
+background: #fcfefc;
+font-size: 15px;
+outline: none;
+}
+
+input:focus,
+select:focus {
+border-color: var(--green);
+box-shadow: 0 0 0 3px #073d2b12;
+}
+
+.choice {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+padding: 9px 0;
+cursor: pointer;
+}
+
+.choice input {
+margin-top: 6px;
+accent-color: var(--green);
+flex-shrink: 0;
+}
+
+.event-options {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 0 20px;
+}
+
+.event-group-title {
+grid-column: 1 / -1;
+margin: 18px 0 5px;
+padding-bottom: 6px;
+border-bottom: 1px solid #dce9df;
+color: var(--green);
+}
+
+.form-note {
+background: #f0f6f1;
+padding: 13px;
+border-radius: 6px;
+font-size: 13px;
+margin-bottom: 20px;
+}
+
+.submit-btn {
+width: 100%;
+background: var(--green);
+color: white;
+font-size: 16px;
+}
+
+.submit-btn:hover {
+background: #0b5940;
+color: white;
+}
+
+.form-message {
+margin-top: 15px;
+color: var(--green);
+text-align: center;
+}
+
+.contact-section {
+text-align: center;
+background: var(--green);
+color: white;
+}
+
+.contact-section h2 {
+font-size: 34px;
+margin-bottom: 12px;
+}
+
+.contact-section p {
+color: #e0eee6;
+margin-bottom: 25px;
+}
+
+footer {
+text-align: center;
+background: var(--dark);
+color: #dce9df;
+padding: 23px 15px;
+font-size: 13px;
+}
+
+footer span {
+color: var(--gold);
+}
+
+@media (max-width: 800px) {
+.menu-btn {
+display: block;
+}
+
+.nav-links {
+display: none;
+position: absolute;
+top: 62px;
+left: 0;
+width: 100%;
+background: var(--green);
+flex-direction: column;
+padding: 20px 6%;
+gap: 18px;
+}
+
+.nav-links.show {
+display: flex;
+}
+
+.event-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+}
+
+@media (max-width: 560px) {
+.hero {
+padding: 45px 5% 60px;
+}
+
+section {
+padding: 55px 5%;
+}
+
+.about-grid,
+.event-grid,
+.event-options {
+grid-template-columns: 1fr;
+}
+
+.form-container {
+padding: 22px 17px;
+}
+
+.btn-outline {
+margin: 12px 0 0;
+}
+
+.event-group-title {
+grid-column: 1;
+}
+
+.brand {
+font-size: 15px;
+}
+
+}
+</style>  </head>  <body>  <header>
+
+<nav>  
+<div class="brand">BRIGHTIAN CARNIVAL</div>  <button class="menu-btn" id="menuBtn"      
+aria-label="Toggle navigation"      
+aria-expanded="false">☰</button>  <ul class="nav-links" id="navLinks">      
+    <li><a href="#home">Home</a></li>      
+    <li><a href="#about">About</a></li>      
+    <li><a href="#events">Events</a></li>      
+    <li><a href="#register">Registration</a></li>      
+    <li><a href="#contact">Contact</a></li>      
+</ul>  </nav>  </header>  <main>  <section class="hero" id="home">  <!-- Your title image will be embedded directly here later. -->    <p class="eyebrow">BEC Presents</p>    <h1>1st Brightian <span>National</span><br>English Carnival</h1>    <p>      
+    A celebration of language, imagination, creativity and competition.      
+    Discover your talent, challenge your limits and let your words shine!      
+</p>    <a class="btn" href="#register">Register Now</a>  
+<a class="btn btn-outline" href="#events">Explore Events</a>  </section>  <section id="about">  <div class="section-heading">      
+    <h2>Welcome to the Carnival</h2>      
+    <p>      
+        A platform where young minds come together to celebrate      
+        English through exciting challenges and creative experiences.      
+    </p>      
+</div>    <div class="about-grid">    <div class="about-card">      
+    <h3>About the Carnival</h3>      
+    <p>      
+        The 1st Brightian National English Carnival is an initiative      
+        of Bright English Club (BEC) and Bright School and College.      
+        It brings together students to explore language, teamwork,      
+        critical thinking and creativity.      
+    </p>      
+</div>      <div class="about-card">      
+    <h3>Our Mission</h3>      
+    <p>      
+        To encourage students to express themselves confidently,      
+        discover new abilities, work together and develop a lasting      
+        love for the English language.      
+    </p>      
+</div>  </div>  </section>  <section class="events-section" id="events">  <div class="section-heading">      
+    <h2>Explore the Events</h2>      
+    <p>      
+        From individual challenges to team competitions,      
+        find the events that match your interests.      
+    </p>      
+</div>    <div class="event-category">    <h3 class="category-title">Solo Events</h3>      <div class="event-grid">      <article class="event-card">      
+    <h3>English Olympiad</h3>      
+    <p>Test your English knowledge and skills.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Poem Recitation</h3>      
+    <p>Bring poetry to life through expression.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Storyspark Session</h3>      
+    <p>Explore the art of storytelling.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Spellbound Fun Fest</h3>      
+    <p>Challenge your spelling skills.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Wordplay / Crossword</h3>      
+    <p>Put your vocabulary and logic to the test.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Movie Mania</h3>      
+    <p>Explore the world of movies and language.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Be a Poet</h3>      
+    <p>Express your imagination through poetry.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Accent Buzz</h3>      
+    <p>Discover the sounds and rhythms of English.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Is He British, American or Banglish?</h3>      
+    <p>Explore accents and pronunciation.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Puzzling Brain</h3>      
+    <p>Solve challenges using logic and reasoning.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Historical Speech: A Revolution, A Nation</h3>      
+    <p>Bring important moments in history to life.</p>      
+</article>
+
+</div>  </div>    <div class="event-category">    <h3 class="category-title">Team Events</h3>      <div class="event-grid">      <article class="event-card">      
+    <h3>Team Quiz</h3>      
+    <p>Collaborate, think fast and find the answers.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Escape The Room</h3>      
+    <p>Work together to solve puzzles and clues.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Debate: Marvel V/S DC</h3>      
+    <p>Defend your side with arguments and evidence.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Find The Stars: Ninja</h3>      
+    <p>Take on the challenge with your team.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Wall Magazine</h3>      
+    <p>Combine creativity, writing and visual design.</p>      
+</article>
+
+</div>  </div>    <div class="event-category signature">    <h3 class="category-title">Signature Events</h3>      <div class="event-grid">      <article class="event-card">      
+    <h3>GTA ∞</h3>      
+    <p>Enter a special gaming-inspired challenge.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>Among Us</h3>      
+    <p>Observe, investigate and uncover the truth.</p>      
+</article>      
+
+<article class="event-card">      
+    <h3>The Mentalist / The Detective: Solve the Case</h3>      
+    <p>Follow the clues and solve the mystery.</p>      
+</article>
+
+</div>  </div>  </section>  <section class="register-section" id="register">  <div class="form-container">    <div class="form-intro">      
+    <h2>Register for the Carnival</h2>      
+    <p>Fill in your details and choose your events.</p>      
+</div>      <form id="registrationForm"  action="https://formspree.io/f/maeeezkl"
+method="POST">
+
+<div class="form-group">      
+        <label for="fullName">Full Name</label>      
+        <input type="text" id="fullName" name="fullName"      
+               placeholder="Enter your full name" required>      
+    </div>      <div class="form-group">      
+    <label for="mobile">Mobile Number</label>      
+    <input type="tel" id="mobile" name="mobile"      
+           placeholder="Enter your mobile number" required>      
+</div>      
+
+<div class="form-group">      
+    <label for="email">Email Address</label>      
+    <input type="email" id="email" name="email"      
+           placeholder="Enter your email address" required>      
+</div>      
+
+<div class="form-group">      
+    <label for="category">Category</label>      
+    <select id="category" name="category" required>      
+        <option value="">Select your category</option>      
+        <option value="Secondary (7-10)">      
+            Secondary (Classes 7–10)      
+        </option>      
+        <option value="Higher Secondary (11-12)">      
+            Higher Secondary (Classes 11–12)      
+        </option>      
+    </select>      
+</div>      
+
+<div class="form-group">      
+    <label for="eventCount">      
+        How many events do you want to participate in?      
+    </label>      
+
+    <input type="number" id="eventCount" name="eventCount"      
+           min="1" max="19" placeholder="Enter number of events"      
+           required>      
+
+    <small id="countMessage"></small>      
+</div>      
+
+<div class="form-group">      
+
+    <span class="field-label">      
+        Select the events you want to participate in:      
+    </span>      
+
+    <div class="event-options" id="eventOptions">      
+
+        <h3 class="event-group-title">Solo Events</h3>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="English Olympiad">      
+            English Olympiad      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Poem Recitation">      
+            Poem Recitation      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Storyspark Session">      
+            Storyspark Session      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Spellbound Fun Fest">      
+            Spellbound Fun Fest      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Wordplay / Crossword">      
+            Wordplay / Crossword      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Movie Mania">      
+            Movie Mania      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Be a Poet">      
+            Be a Poet      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Accent Buzz">      
+            Accent Buzz      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Is He British, American or Banglish?">      
+            Is He British, American or Banglish?      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Puzzling Brain">      
+            Puzzling Brain      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Historical Speech: A Revolution, A Nation">      
+            Historical Speech: A Revolution, A Nation      
+        </label>      
+
+        <h3 class="event-group-title">Team Events</h3>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Team Quiz">      
+            Team Quiz      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Escape The Room">      
+            Escape The Room      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Debate: Marvel V/S DC">      
+            Debate: Marvel V/S DC      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Find The Stars: Ninja">      
+            Find The Stars: Ninja      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Wall Magazine">      
+            Wall Magazine      
+        </label>      
+
+        <h3 class="event-group-title">Signature Events</h3>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="GTA ∞">      
+            GTA ∞      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="Among Us">      
+            Among Us      
+        </label>      
+
+        <label class="choice">      
+            <input type="checkbox" name="events"      
+                   value="The Mentalist / The Detective: Solve the Case">      
+            The Mentalist / The Detective: Solve the Case      
+        </label>      
+
+    </div>      
+
+    <p id="selectionMessage" aria-live="polite"></p>      
+
+</div>      
+
+<div class="form-note">
+
+<strong>Note:</strong> Please ensure your information is correct
+before submitting your registration.
+
+</div>  <button class="btn submit-btn" type="submit">      
+        Submit Registration      
+    </button>      <p class="form-message" id="formMessage"      
+   aria-live="polite"></p>
+
+</form>  </div>  </section>  <section class="contact-section" id="contact">  <h2>Be Part of the Experience</h2>    <p>      
+    Join us in celebrating creativity, communication and competition.      
+</p>    <a class="btn" href="#register">Register Now</a>  </section>  </main>  <footer>      
+    <p>      
+        © 2026 <span>1st Brightian National English Carnival</span>      
+    </p>      
+    <p>Organised by Bright English Club & Bright School and College</p>      
+</footer>  <script>      
+const menuBtn = document.getElementById("menuBtn");      
+const navLinks = document.getElementById("navLinks");    menuBtn.addEventListener("click", function () {  
+const isOpen = navLinks.classList.toggle("show");  
+menuBtn.setAttribute("aria-expanded", isOpen);  
+});  document.querySelectorAll(".nav-links a").forEach(function (link) {
+link.addEventListener("click", function () {
+navLinks.classList.remove("show");
+menuBtn.setAttribute("aria-expanded", "false");
+});
+});
+
+const eventCheckboxes = Array.from(
+document.querySelectorAll('input[name="events"]')
+);
+
+const eventCount = document.getElementById("eventCount");
+const selectionMessage = document.getElementById("selectionMessage");
+const countMessage = document.getElementById("countMessage");
+const registrationForm = document.getElementById("registrationForm");
+const formMessage = document.getElementById("formMessage");
+
+function updateEventCount() {
+const selected = eventCheckboxes.filter(function (checkbox) {
+return checkbox.checked;
+}).length;
+
+selectionMessage.textContent =
+selected + " event" + (selected === 1 ? "" : "s") + " selected.";
+
+if (eventCount.value !== "" && Number(eventCount.value) !== selected) {
+countMessage.textContent =
+"You've selected " + selected +
+" event(s). Make sure this matches the number above.";
+countMessage.style.color = "#a34425";
+} else {
+countMessage.textContent = "";
+}
+
+}
+
+eventCheckboxes.forEach(function (checkbox) {
+checkbox.addEventListener("change", updateEventCount);
+});
+
+eventCount.addEventListener("input", updateEventCount);
+
+registrationForm.addEventListener("submit", async function (event) {
+event.preventDefault();
+
+const selectedEvents = eventCheckboxes.filter(function (checkbox) {
+return checkbox.checked;
+});
+
+if (selectedEvents.length === 0) {
+formMessage.textContent = "Please select at least one event.";
+return;
+}
+
+if (Number(eventCount.value) !== selectedEvents.length) {
+formMessage.textContent =
+"Please make the event count match your selected events.";
+return;
+}
+
+formMessage.textContent = "Submitting your registration...";
+
+const submitButton = registrationForm.querySelector(
+'button[type="submit"]'
+);
+
+submitButton.disabled = true;
+
+try {
+const response = await fetch(registrationForm.action, {
+method: "POST",
+body: new FormData(registrationForm),
+headers: {
+"Accept": "application/json"
+}
+});
+
+if (response.ok) {      
+    formMessage.textContent =      
+        "Registration submitted successfully! Thank you for registering.";      
+
+    registrationForm.reset();      
+    updateEventCount();      
+} else {      
+    formMessage.textContent =      
+        "Submission failed. Please check your Formspree setup and try again.";      
+}
+
+} catch (error) {
+formMessage.textContent =
+"Unable to submit right now. Please check your internet connection and try again.";
+} finally {
+submitButton.disabled = false;
+}
+
+});
+</script>  </body>
+
+  </html>
